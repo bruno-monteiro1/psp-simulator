@@ -44,7 +44,7 @@ const retrieveFinancialsByPeriod = async (request) => {
 		return results;
 	})
 	.catch(err => {
-		throw new Error('Invalid date input.')
+		throw new Error('Invalid input.')
 	});
 
 	return financials;
