@@ -1,0 +1,22 @@
+{
+  "name": "confere-psp",
+  "version": "1.0.0",
+  "description": "confere payment service provider",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon"
+  },
+  "author": "bruno monteiro",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "knex": "^0.19.4",
+    "pg": "^7.12.1"
+  }
+}
