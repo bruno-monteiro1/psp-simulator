@@ -132,7 +132,7 @@ const retrieveBalanceByDate = async (request) => {
 
 	const balance = await Object.freeze({
 		consult: new Date(),
-		balance_after: date,
+		balance_at: date,
 		available: available_balance,
 		expected: expected_balance,
 	});
