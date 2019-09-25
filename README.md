@@ -63,7 +63,7 @@ The API only checks the field correspondent to the filter requested.
 	"from": "2019-09-01",
 	"until": "2020-12-31",
 	"transaction_type": "debit", //debit, credit, installment_credit
-	"status": "received," //expected, received
+	"status": "received" //expected, received
 	"id": "" // financial id
 }
 ```
