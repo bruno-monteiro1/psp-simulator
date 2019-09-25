@@ -11,6 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', res.json('PSP is running fine!'));
 app.post('/process-transaction', (req, res) => { transactionInsertion.insertTransaction(req, res, crypto) });
 app.post('/retrieve-transactions', (req, res) => { transactionRetrieving.retrieveTransactions(req, res) });
 app.post('/retrieve-financials', (req, res) => { financialRetrieving.retrieveFinancials(req, res) });
