@@ -17,7 +17,7 @@ https://www.getpostman.com/downloads/
 
 ### Processing transactions
 
-“/process-transaction” endpoint create and store transactions into the database, and also automatically calls another controller, financial-insertion, to generate the one or more financials related to the transactions received. It expects a POST request with the following schema:
+“/process-transaction” endpoint create and store transactions into the database, and also automatically calls another controller, financial-insertion, to generate one or more financials related to the transactions received. It expects a POST request with the following schema:
 
 ```
 {
