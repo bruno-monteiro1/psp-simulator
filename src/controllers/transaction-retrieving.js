@@ -7,7 +7,7 @@ const retrieveTransactions = async (req, res) => {
 		await Object.assign(response, transactions);
 		res.status(200).send(JSON.stringify(response));
 	} catch (err) {
-		res.status(400).send('Unable to retrieve transactions ' + err);
+		res.status(400).send(err);
 	}
 }
 

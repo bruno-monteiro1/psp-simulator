@@ -13,23 +13,23 @@ const createTransaction = (raw_transaction, crypto) => {
 	}
 
 	if(type !== 'credit' && type !== 'debit' && type !== 'installment_credit') {
-		throw new Error('invalid type');
+		throw new Error('Invalid type');
 	}
 
 	if((type === 'debit' && installments)) {
-		throw new Error('invalid type or installments');
+		throw new Error('Invalid type or installments');
 	}
 
 	if(type === 'credit' && installments !== 1) {
-		throw new Error('invalid type or installments');
+		throw new Error('Invalid type or installments');
 	}
 
 	if(type === 'installment_credit' && (installments < 2 || installments > 12)) {
-		throw new Error('invalid type or installments');
+		throw new Error('Invalid type or installments');
 	}
 
 	if(!number || !expiry || !cvv || !holder) {
-		throw new Error('invalid card information');
+		throw new Error('Invalid card information');
 	}
 
 	if(number.length !== 16 || expiry.length !== 5 || cvv.length !== 3) {

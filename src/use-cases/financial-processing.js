@@ -7,7 +7,10 @@ const processFinancial = (final_transaction, crypto) => {
 	if(type === 'debit') {
 		const financial_value = createFinancialValue(transaction_value, 'debit', null);
 		const financial = [];
-		financial.push(createFinancial.createFinancial(id, transaction_date, financial_value, '', '', description, type, card_number, 0, 'received', crypto));
+		financial.push(
+			createFinancial.createFinancial(
+				id, transaction_date, financial_value, '', '', description, type, card_number, 0, 'received', crypto));
+		
 		return financial;
 	}
 
@@ -22,6 +25,7 @@ const processFinancial = (final_transaction, crypto) => {
 				createFinancial.createFinancial(
 					id, transaction_date, financial_value, i, `/${installments}`, description, type, card_number, add_days_to_receive, 'expected', crypto));
 		}
+
 		return financials;
 	}
 }

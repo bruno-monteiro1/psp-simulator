@@ -8,7 +8,8 @@ const insertFinancialDB = (financial) => {
 		access_financials('financials')
 		.insert(financial[i])
 		.catch(err => {
-			throw new Error('Failed to register financial.' + err);
+			throw new Error('Failed to register financial.');
+			console.log(err);
 		});
 	}
 };

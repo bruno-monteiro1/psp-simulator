@@ -9,7 +9,7 @@ const insertTransaction = async (req, res, crypto) => {
 		const financial = await insertFinancial.insertFinancial(transaction, crypto);
 		res.status(200).send(JSON.stringify(transaction));
 	} catch (err) {
-		res.status(400).send(`Transaction not processed. ${err}`);
+		res.status(400).send(`${err}`);
 	}
 }
 

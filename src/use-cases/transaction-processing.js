@@ -8,7 +8,7 @@ const processTransaction = (transaction, crypto) => {
 		return finalTransaction;
 
 	} catch (err) {
-		throw new Error(err);
+		throw new Error('Unable to process transaction. ' + err);
 	}
 }
 

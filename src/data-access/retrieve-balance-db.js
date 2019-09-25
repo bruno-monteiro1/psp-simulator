@@ -3,7 +3,8 @@ const database = require('./database.js');
 const access_balance = database.db_connection;
 
 // {
-// 	"filter": "by type, by description, none",
+// 	"filter": "by type, by description, by date, none",
+//  "date": "",
 // 	"transaction_type": "", 
 // 	"description": ""
 // }
@@ -16,6 +17,10 @@ const retrieveBalance = (request) => {
 
 	if(request.filter === 'by description'){
 		return retrieveBalanceByDescription(request);
+	}
+
+	if(request.filter === 'by date'){
+		return retrieveBalanceByDate(request)
 	}
 
 	if(request.filter === 'none' || !request.filter){
@@ -98,6 +103,43 @@ const retrieveBalanceByDescription = async (request) => {
 	const balance = await Object.freeze({
 		consult: new Date(),
 		description: description,
+		available: available_balance,
+		expected: expected_balance,
+	});
+
+	return balance;
+}
+
+const retrieveBalanceByDate = async (request) => {
+
+	const date = request.date;
+
+	const raw_expected_balance = await access_balance('financials')
+	.where('received_date', '>', date)
+	.sum('financial_value')
+	.then(results => {
+		return results[0].sum;
+	})
+	.catch(err => {
+		throw new Error();
+	});
+
+	const raw_available_balance = await access_balance('financials')
+	.where('received_date', '<', date)
+	.sum('financial_value')
+	.then(results => {
+		return results[0].sum;
+	})
+	.catch(err => {
+		throw new Error();
+	});
+
+	const expected_balance = await parseFloat(raw_expected_balance);
+	const available_balance = await parseFloat(raw_available_balance);
+
+	const balance = await Object.freeze({
+		consult: new Date(),
+		balance_after: date,
 		available: available_balance,
 		expected: expected_balance,
 	});
