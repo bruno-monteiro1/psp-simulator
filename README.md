@@ -17,7 +17,7 @@ https://www.getpostman.com/downloads/
 
 ### Processing transactions
 
-“/process-transaction” endpoint create and store transactions into the database, and also automatically calls another controller, financial-insertion, to generate one or more financials related to the transactions received. It expects a POST request with the following schema:
+“/process-transaction” endpoint create and store transactions into the database, and also automatically calls another controller, financial-insertion, to generate one or more financials related to the transaction received. It expects a POST request with the following schema:
 
 ```
 {
@@ -33,7 +33,7 @@ https://www.getpostman.com/downloads/
 	}
 }
 ```
-It only stores the last 4 digits of the card number.
+All information are stored into the database, but the card number is shortened due to security reasons. Only the last 4 digits are stored. 
 
 ### Retrieving transactions
 
@@ -51,7 +51,7 @@ It only stores the last 4 digits of the card number.
 }
 ```
 
-The API only checks the field correspondent to the filter requested. 
+The API only checks the field correspondent to the filter requested, ignoring all the others.
 
 ### Retrieving financials
 
@@ -68,7 +68,7 @@ The API only checks the field correspondent to the filter requested.
 }
 ```
 
-The API only checks the field correspondent to the filter requested. 
+The API only checks the field correspondent to the filter requested, ignoring all the others.
 
 ### Retrieving balance
 
@@ -83,7 +83,7 @@ The API only checks the field correspondent to the filter requested.
 }
 ```
 
-The API only checks the field correspondent to the filter requested. If the filter field does not have any value, it responds the same way as "none", showing the current balance 
+The API only checks the field correspondent to the filter requested. If the "filter" field does not have any value, it responds the same way as "none", showing the current balance 
 
 ## Built With
 
