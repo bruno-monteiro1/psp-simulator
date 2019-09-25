@@ -7,9 +7,9 @@ const insertTransaction = async (req, res, crypto) => {
 		const transaction = await processTransaction.processTransaction(req.body, crypto);
 		await insertTransactionDB.insertTransactionDB(transaction);
 		const financial = await insertFinancial.insertFinancial(transaction, crypto);
-		res.status(200).send(JSON.stringify(transaction));
+		res.status(200).json(transaction);
 	} catch (err) {
-		res.status(400).send(`${err}`);
+		res.status(400).json(`${err}`);
 	}
 }
 
