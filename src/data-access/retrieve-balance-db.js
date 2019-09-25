@@ -2,13 +2,6 @@ const database = require('./database.js');
 
 const access_balance = database.db_connection;
 
-// {
-// 	"filter": "by type, by description, by date, none",
-//  "date": "",
-// 	"transaction_type": "", 
-// 	"description": ""
-// }
-
 const retrieveBalance = (request) => {
 
 	if(request.filter === 'by type'){
