@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => { res.send('PSP is running fine!') });
+app.get('/', (req, res) => { res.send('PSP is running fine! \n \n Please check https://github.com/bruno-monteiro1/confere-psp for more information.') });
 app.post('/process-transaction', (req, res) => { transactionInsertion.insertTransaction(req, res, crypto) });
 app.post('/retrieve-transactions', (req, res) => { transactionRetrieving.retrieveTransactions(req, res) });
 app.post('/retrieve-financials', (req, res) => { financialRetrieving.retrieveFinancials(req, res) });
