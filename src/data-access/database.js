@@ -3,10 +3,8 @@ const knex = require('knex');
 const db_connection = knex({
 	  client: 'pg',
 	  connection: {
-	    host : '127.0.0.1',
-	    user : 'bruno',
-	    password : '',
-	    database : 'confere-psp'
+	    host : process.env.DATABASE_URL,
+	    ssl: true
 	  }
 });
 
