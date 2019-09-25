@@ -16,8 +16,6 @@ app.post('/retrieve-transactions', (req, res) => { transactionRetrieving.retriev
 app.post('/retrieve-financials', (req, res) => { financialRetrieving.retrieveFinancials(req, res) });
 app.post('/balance', (req, res) => { balanceRetrieving.balance(req, res) });
 
-
-
 app.listen(process.env.PORT || 3000, () => {
-	console.log('Server running.');
+	console.log(`Server running on port ${process.env.PORT}`);
 });
