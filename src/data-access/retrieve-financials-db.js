@@ -2,15 +2,6 @@ const database = require('./database.js');
 
 const access_financials = database.db_connection;
 
-// {
-// 	"filter": "by id", //by range, by type, by status, by id
-// 	"from": "2019-09-01",
-// 	"until": "2020-12-31",
-// 	"transaction_type": "debit", //debit, credit, installment_credit
-// 	"status": "received," //expected, received
-// 	"id": ""
-// }
-
 const retrieveFinancials = (request) => {
 
 	if(request.filter === 'by range'){
