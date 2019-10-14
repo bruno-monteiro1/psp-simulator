@@ -1,6 +1,6 @@
-# Confere PSP
+# Payment Service Provider simulation
 
-Confere PSP is a REST API that simulates a Payment Service Provider. It is connected to a real database and can process transactions, create financials, retrieve them and also return the current and future balance of the customer's account. 
+This project is a REST API that simulates a Payment Service Provider. It is connected to a real database and can process transactions, create financials, retrieve them and also return the current and future balance of the customer's account. 
 
 
 ## Getting Started
