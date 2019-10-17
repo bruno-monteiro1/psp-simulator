@@ -7,7 +7,7 @@ This project is a REST API that simulates a Payment Service Provider. It is conn
 
 The API is running here: 
 
-https://confere-psp.herokuapp.com
+https://psp-simulator.herokuapp.com/
 
 ## Testing
 
@@ -29,7 +29,7 @@ https://www.getpostman.com/downloads/
 		"number": "5200555500001234",
 		"expiry": "20/21",
 		"cvv": "123",
-		"holder": "David Blaine White"
+		"holder": "Harry Houdini"
 	}
 }
 ```
