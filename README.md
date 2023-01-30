@@ -5,9 +5,7 @@ This project is a REST API that simulates a Payment Service Provider. It is conn
 
 ## Getting Started
 
-The API is running here: 
-
-https://psp-simulator.herokuapp.com/
+This project used to run on a Heroku environment, but since those don't exist anymore, it should be downloaded, configured and built locally. 
 
 ## Testing
 
